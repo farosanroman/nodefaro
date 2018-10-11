@@ -10,7 +10,7 @@ var mail=
           {"to":[{"email":"ppazpurua@gmail.com"}]}
      ],
 "from":{"email":"defensoresdelademocracia2018@gmail.com"},
-"subject":"📣 www www ccc",
+"subject":"📣 www www ccc ",
 "content":[{"type":"text/plain","value":"Registrar el formulario del centro de votacion 130301011 UNIDAD EDUCATIVA  ESTADAL ANITA ESPINAL\n\n FORMULARIO SERVICIOS\n\n https://polidata.azurewebsites.net/#observacion?cedula=V21119337"}]
 }
 }
