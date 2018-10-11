@@ -13,6 +13,10 @@ app.get('/',(req,res)=>{
   res.send("NodeFaro v0.0.0")
   //var ppa=queries.f();
   //console.log(ppa)
+  var defensores=[
+      {cedula:"V3664204",celular:"04126340692",mail:"ppazpurua@gmail.com",twt:"pazpurua"},
+      {cedula:"V3664204",celular:"04126340692",mail:"ppazpurua@gmail.com",twt:"pazpurua"},
+    ]
 });
 app.get('/getUSER', function (request, response) {
     var criteria = { "id": 123 }
