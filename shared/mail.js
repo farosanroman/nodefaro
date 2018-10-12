@@ -1,6 +1,7 @@
 var request = require("request");
 //var messages = require('./messages');
 var config = require('./config'); 
+
 var Mail = {
 SendGrid: function (screen_name, callback) {
 var mail=
@@ -41,6 +42,20 @@ var url = "https://f18.azurewebsites.net/api/SendGrid?code=iLu4QOAbtZYJI1yrOyrnA
             }
         })
 
-    }}
+    },
+    verify:function(mail,callback){
+        var CloudmersiveValidateApiClient = require('cloudmersive-validate-api-client');
+ 
+        var defaultClient = CloudmersiveValidateApiClient.ApiClient.instance;
+         
+        // Configure API key authorization: Apikey
+        var Apikey = defaultClient.authentications['8af20ca2-3637-4466-8020-dec91d76eaf6'];
+        //Apikey.apiKey = "8af20ca2-3637-4466-8020-dec91d76eaf6";
+        callback(null, {flak:"ok"})
+    }
     
-        module.exports = Mail;
+}
+
+
+    
+module.exports = Mail;

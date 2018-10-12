@@ -18,6 +18,16 @@ app.get('/',(req,res)=>{
       {cedula:"V3664204",celular:"04126340692",mail:"ppazpurua@gmail.com",twt:"pazpurua"},
     ]
 });
+app.get('/verifyMAIL', function (request, response) {
+    var criteria = { "id": 123 }
+    var id = "45031619"
+    //de pazpurua a poliflash
+    //morocho64
+    mail.verify(criteria, function (err, results) {
+        
+        response.end(JSON.stringify(results));
+    })
+});
 app.get('/getUSER', function (request, response) {
     var criteria = { "id": 123 }
     var id = "45031619"
