@@ -3,19 +3,20 @@ var request = require("request");
 var config = require('./config'); 
 
 var Mail = {
-SendGrid: function (screen_name, callback) {
+SendGrid: function (criteria, callback) {
+console.log(criteria)
 var mail=
 {"id":"V3664204*10",
 "message":{"personalizations":
      [
-          {"to":[{"email":"ppazpurua@gmail.com"}]}
+          {"to":[{"email":criteria.mail}]}
      ],
 "from":{"email":"defensoresdelademocracia2018@gmail.com"},
-"subject":"📣 www www ccc ",
-"content":[{"type":"text/plain","value":"Registrar el formulario del centro de votacion 130301011 UNIDAD EDUCATIVA  ESTADAL ANITA ESPINAL\n\n FORMULARIO SERVICIOS\n\n https://polidata.azurewebsites.net/#observacion?cedula=V21119337"}]
+"subject":"📣 Prueba de Concepto ",
+"content":[{"type":"text/plain","value":criteria.mensaje}]
 }
 }
-
+console.log(mail)
 var url = "https://f18.azurewebsites.net/api/SendGrid?code=iLu4QOAbtZYJI1yrOyrnAnFwSyvX1itKap5LvHFD1W9am2JXbHG3cQ==";
         
         
@@ -31,7 +32,7 @@ var url = "https://f18.azurewebsites.net/api/SendGrid?code=iLu4QOAbtZYJI1yrOyrnA
            
             body: JSON.stringify(mail)
         }
-        console.log(options)
+        //console.log(options)
         request(options, function (error, res, flag) {
             console.log(error)
             console.log(flag)
