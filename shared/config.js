@@ -1,6 +1,6 @@
 var config = {}
 
-
+//github Nicaboni1
 //@poliflash poliflashpiso5   correo=defensoresdelademocracia2018   Defensor*123
 //@farotweet  esta en ppazpurua@gmail.com 
 //farounidad@gmail.com
