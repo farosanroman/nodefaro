@@ -33,7 +33,7 @@ app.get('/getUSER', function (criteria, response) {
     var criteria={"key":7,"cedula":"V3664204","celular":"4126340692","mail":"ppazpurua@gmail.com","twt":"pazpurua","mensaje":"Prueba de Concepto SMS, TWT, MAIL"}
    
     //var criteria = { "id": 123 }
-    var id = "45031619"
+    //var id = "45031619"
     //de pazpurua a poliflash
     //morocho64
     var screen_name=criteria.twt
@@ -76,6 +76,7 @@ app.get('/SendSMSMAILTWT', function (criteria, response) {
   app.post('/SendSMSMAILTWT', function (criteria, response) {
     var criteria={"key":7,"cedula":"V3664204","celular":"4126340692","mail":"ppazpurua@gmail.com","twt":"pazpurua","mensaje":"Prueba de Concepto SMS, TWT, MAIL"}
     var res=[]
+    
     sms.SendSMS(criteria, function (err, results) {
           res.push(results);
           mail.SendGrid(criteria, function (err, resultsmail) {
@@ -99,6 +100,7 @@ app.get('/SendSMSMAILTWT', function (criteria, response) {
             
        })
      })
+    
       
   });      
 app.get('/SendSMS', function (request, response) {
