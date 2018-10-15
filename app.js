@@ -89,7 +89,7 @@ app.get('/SendSMSMAILTWT', function (criteria, response) {
       
   }); 
   app.post('/SendSMSMAILTWT', function (criteria, response) {
-    var criteria={"key":7,"cedula":"V3664204","celular":"4126340692","mail":"ppazpurua@gmail.com","twt":"pazpurua","mensaje":"Prueba de Concepto SMS, TWT, MAIL"}
+    var criteria={"key":7,"cedula":"V3664204","celular":"4126340692","mail":"ppazpurua@gmail.com","twt":"pazpurua","mensaje":"Prueba de Concepto SMS, TWT, MAIL"};
     var res=[]
     
     sms.SendSMS(criteria, function (err, results) {
