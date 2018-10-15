@@ -14,7 +14,7 @@ var twitter_oauth = {
 var Twt = {
    
     getUSER: function (screen_name, callback) {
-        screen_name = screen_name.replace(/@/g, "");
+        //screen_name = screen_name.replace(/@/g, "");
         var request_options = {
             url: 'https://api.twitter.com/1.1/users/lookup.json?screen_name=' + screen_name,
             oauth: twitter_oauth,
