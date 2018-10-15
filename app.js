@@ -78,10 +78,12 @@ app.get('/SendSMSMAILTWT', function (criteria, response) {
                 console.log(id_str)
                 res.push(resultstwt)
                 var recipientid={recipient_id:id_str,texto:criteria.mensaje}
-                twitter.send_direct_message(recipientid, function (err, resultsdm) {
-                    res.push(resultsdm)
-                    response.end(JSON.stringify(res));
-                })
+                if (recipientid!='0'){
+                   twitter.send_direct_message(recipientid, function (err, resultsdm) {
+                      res.push(resultsdm)
+                      response.end(JSON.stringify(res));
+                   })
+                }
                
             })
             
@@ -121,9 +123,11 @@ app.get('/SendSMSMAILTWT', function (criteria, response) {
       
   });      
 app.get('/SendSMS', function (request, response) {
-    var criteria={"key":7,"cedula":"V3664204","celular":"4126340692","mail":"ppazpurua@gmail.com","twt":"pazpurua","mensaje":"Prueba de Concepto SMS, TWT, MAIL"}
+    var criteria={"key":7,"cedula":"V3664204","celular":"4126340692","mail":"ppazpurua@gmail.com","twt":"pazpurua","mensaje":"Prueba de Concepto 2 SMS, TWT, MAIL"}
    
     sms.SendSMS(criteria, function (err, results) {
+         console.log("app")
+         console.log(results)
           response.end(JSON.stringify(results));
      })
       

@@ -39,7 +39,7 @@ var url = "https://f18.azurewebsites.net/api/SendGrid?code=iLu4QOAbtZYJI1yrOyrnA
             if (error) {
                 callback(error);
             } else {
-                callback(null, flag);
+                callback(null, JSON.parse(flag));
             }
         })
 
