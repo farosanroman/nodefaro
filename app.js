@@ -94,9 +94,9 @@ app.get('/SendSMSMAILTWT', function (criteria, response) {
     var res=[]
     
     sms.SendSMS(criteria, function (err, results) {
-          //res.push(results);
+          res.push(results);
           mail.SendGrid(criteria, function (err, resultsmail) {
-            //res.push(resultsmail)
+            res.push(resultsmail)
             var screen_name=criteria.twt;
             twitter.getUSER(screen_name, function (err, resultstwt) {
                console.log("resultstwt")
