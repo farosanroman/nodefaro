@@ -12,8 +12,8 @@ var sms = require('./shared/sms.js');
 app.use(express.json())
 var allowCrossDomain = function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+    //res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+    //res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
 
     // intercept OPTIONS method
     if ('OPTIONS' === req.method) {
@@ -91,7 +91,11 @@ app.get('/SendSMSMAILTWT', function (criteria, response) {
      })
       
   }); 
-  app.post('/SendSMSMAILTWT', function (criteria, response) {
+  app.post('/SendSMSMAILTWT2', function (request, response) {
+    //var criteria={"key":7,"cedula":"V3664204","celular":"4126340692","mail":"ppazpurua@gmail.com","twt":"pazpurua","mensaje":"Prueba de Concepto SMS, TWT, MAIL"}
+    var criteria=request.body;
+    
+    
     var res=[]
     sms.SendSMS(criteria, function (err, results) {
           res.push(results);
