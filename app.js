@@ -110,9 +110,8 @@ app.get('/SendSMSMAILTWT', function (criteria, response) {
                 res.push(resultstwt)
                 var recipientid={recipient_id:id_str,texto:criteria.mensaje}
                 twitter.send_direct_message(recipientid, function (err, resultsdm) {
-                    res.push(resultsdm)
-                    var ppa={a:1}
-                    response.end(JSON.stringify(ppa));
+                    res.push(resultsdm)                    
+                    response.end(JSON.stringify(res));
                 })
                
             })
