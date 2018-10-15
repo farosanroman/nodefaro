@@ -32,7 +32,7 @@ var Twt = {
             if (user.errors == undefined) {
                 code = 1;
             } else {
-                var code = user.errors[0].code;//17
+                code = user.errors[0].code;//17
             }
             //var twitterJSON = JSON.parse(user)
             if (error) {

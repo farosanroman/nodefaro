@@ -52,6 +52,7 @@ app.get('/getUSER', function (criteria, response) {
     //de pazpurua a poliflash
     //morocho64
     var screen_name=criteria.twt
+    //screen_name='pazpurua'
     twitter.getUSER(screen_name, function (err, results) {
         var id_str=results.id_str
         console.log(id_str)
