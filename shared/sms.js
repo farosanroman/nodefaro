@@ -32,7 +32,7 @@ var url = "https://f18.azurewebsites.net/api/SmsMensajePost?code=vMa3mlCfOi8bQA4
            
             body: JSON.stringify(sms)
         }
-        console.log(options)
+        //console.log(options)
         request(options, function (error, res, smsmensaje) {
             //console.log(error)
             //console.log(flag)
