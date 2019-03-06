@@ -34,10 +34,10 @@ config.access_token_secret = "S3D40KaioIKXEyKzkFTm1aVMCzMcuhLmSmj6jyn58uSAv";
 */
 
 config.screen_name= "pazpurua";
-config.consumer_key = "rQ5M4acYFfTQjexZeyiR1kNjB";
-config.consumer_secret = "EkotVFepp6KLiyFP0Srs3Xij8yW8h59koY4sPm9ej53EVQ7zRd";
-config.access_token = "45031619-bQ39sR6n7diBy8qPOYOokDC3BlmqayLNqbyZSU4IB";
-config.access_token_secret = "uA11B724A8eRMTGNtpWtmDZxPTWBLNu34hVdtTXGra5T3";
+config.consumer_key = "xdqwTm8Kl3dQEp6cwpo0hWMq1";
+config.consumer_secret = "jVyPIk5DOz8WzTszYKqBtw1Kd2nVOL03mrfGbmSqLm3dvoCrpu";
+config.access_token = "45031619-aeGz6J1HKeriW1poYYecX8DZUFClaUrL0gKHGYPNc";
+config.access_token_secret = "9nZ6YmCjWNiqAsur60UZ4L32qgZOXWOc3kVkVtj4V9Epv";
 
 //farotwt@gmail.com farotwt123$
 config.authKey = process.env.AUTH_KEY || "BsJoF9NpuH8cOTvcUlevD8FdLVsvC985jJgctXdGeFAos63is1N48ynWe22k89cueWDFi3yUi8GOAZ84pDIWnA==";

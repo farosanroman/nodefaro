@@ -4,7 +4,7 @@ var config = require('./config');
 
 var Mail = {
 SendGrid: function (criteria, callback) {
-//console.log(criteria)
+console.log(criteria)
 var ppa=1;
 var mail=
 {"id":"V3664204*10",
@@ -17,8 +17,8 @@ var mail=
 "content":[{"type":"text/plain","value":criteria.mensaje}]
 }
 }
-//console.log(mail)
-var url = "https://f18.azurewebsites.net/api/SendGrid?code=iLu4QOAbtZYJI1yrOyrnAnFwSyvX1itKap5LvHFD1W9am2JXbHG3cQ==";
+console.log(JSON.stringify(mail))
+var url = "https://f19.azurewebsites.net/api/SendGrid?code=dvmuzUodqLRqz4pJ4k17k0fpgDGZUu49adRciM7QxbABL6gQ84VsnA==";
         
         
 
@@ -33,10 +33,11 @@ var url = "https://f18.azurewebsites.net/api/SendGrid?code=iLu4QOAbtZYJI1yrOyrnA
            
             body: JSON.stringify(mail)
         }
-        //console.log(options)
+        console.log(options)
         request(options, function (error, res, flag) {
-           
-            //console.log(flag)
+           console.log("ppa")
+            console.log(JSON.stringify(flag))
+            console.log("ppw")
             if (error) {
                 callback(error);
             } else {

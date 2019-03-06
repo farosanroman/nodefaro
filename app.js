@@ -62,7 +62,10 @@ app.get('/getUSER', function (criteria, response) {
 
   
 app.get('/SendSMSMAILTWT', function (criteria, response) {
-    var criteria={"key":7,"cedula":"V3664204","celular":"4126340692","mail":"ppazpurua@gmail.com","twt":"pazpurua","mensaje":"Prueba de Concepto SMS, TWT, MAIL"}
+   // var criteria={"key":7,"cedula":"V3664204","celular":"4126340692","mail":"ppazpurua@gmail.com","twt":"pazpurua","mensaje":"Prueba de Concepto SMS, TWT, MAIL"}
+    var criteria={"key":7,"cedula":"V888888","celular":"4142863817","mail":"franciscojcastrom@gmail.com","twt":"fcastrom","mensaje":"Te esperan 8.000 observadore"}
+    var criteria={"key":7,"cedula":"V888888","celular":"4264020509","mail":"gboyerizo@gmail.com","twt":"gboyerizo","mensaje":"Te esperan 8.000 observadore"}
+   
     var res=[]
     sms.SendSMS(criteria, function (err, results) {
           res.push(results);
@@ -126,7 +129,8 @@ app.get('/SendSMSMAILTWT', function (criteria, response) {
       
   });      
 app.get('/SendSMS', function (request, response) {
-    var criteria={"key":7,"cedula":"V3664204","celular":"4126340692","mail":"ppazpurua@gmail.com","twt":"pazpurua","mensaje":"Prueba de Concepto 2 SMS, TWT, MAIL"}
+   // var criteria={"key":7,"cedula":"V3664204","celular":"4126340692","mail":"ppazpurua@gmail.com","twt":"pazpurua","mensaje":"Prueba de Concepto 2 SMS, TWT, MAIL"}
+    var criteria={"key":7,"cedula":"V888888","celular":"4142863817","mail":"franciscojcastrom@gmail.com","twt":"@fcastrom","mensaje":"Te esperan 8.000 observadore"}
    
     sms.SendSMS(criteria, function (err, results) {
          console.log("app")
@@ -139,26 +143,31 @@ app.get('/SendGrid', function (request, response) {
     var criteria={"key":7,"cedula":"V3664204","celular":"4126340692","mail":"ppazpurua@gmail.com","twt":"pazpurua","mensaje":"Prueba de Concepto SMS, TWT, MAIL"}
    
   mail.SendGrid(criteria, function (err, results) {
+       console.log("finn")
         response.end(JSON.stringify(results));
    })
     
 });
 app.get('/DM', function (request, response) {
-    var criteria = { "recipient_id": "45031619", "text": "Pruba Masiva" }
+   // var criteria = { "recipient_id": "45031619", "text": "Sr/Srta millenial. Se quiere unir a este futurista grupo de activismo politico?" }
     //160334298
-    var id = "45031619"
+  //var id = "45031619"
     
-     id = "92530391"//cartaya
+    // id = "92530391"//cartaya
     
-    id = "51886687"//francisco castro
-    id = "1018815783873449985"//poliflsh
-    var T = "Envio de Mensaje Informativo\n";
+   // id = "51886687"//francisco castro
+    //id = "1018815783873449985"//poliflsh
+    //id="791737378083921921"; //faro tweet
+    var T = "Sr/Srta millenial. Se quiere unir a este futurista grupo de activismo politico?\nEn Libertador\n🙋‍https://twitter.com/messages/compose?recipient_id=45031619&welcome_message_id=1101849099102552068";
     
         var criteria={recipient_id:id,texto:T}
-        twitter.send_direct_message(criteria, function (err, results) {
+        for (i = 0; i < 5; i++) { 
+          twitter.send_direct_message(criteria, function (err, results) {
             
             response.end(JSON.stringify(results));
         })
+        }
+        
     
 });
 const port=process.env.PORT || 4730
