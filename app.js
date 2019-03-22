@@ -61,49 +61,54 @@ app.get('/getUSER', function (criteria, response) {
 });
 
   
-app.get('/SendSMSMAILTWT', function (criteria, response) {
-   // var criteria={"key":7,"cedula":"V3664204","celular":"4126340692","mail":"ppazpurua@gmail.com","twt":"pazpurua","mensaje":"Prueba de Concepto SMS, TWT, MAIL"}
+app.get('/SendMAILSMSTWT', function (criteria, response) {
+   //var criteria={"key":7,"cedula":"V3664204","celular":"4126340692","mail":"ppazpurua@gmail.com","twt":"pazpurua","mensaje":"Prueba de Concepto SMS, TWT, MAIL"}
     var criteria={"key":7,"cedula":"V888888","celular":"4142863817","mail":"franciscojcastrom@gmail.com","twt":"fcastrom","mensaje":"Te esperan 8.000 observadore"}
-    var criteria={"key":7,"cedula":"V888888","celular":"4264020509","mail":"gboyerizo@gmail.com","twt":"gboyerizo","mensaje":"Te esperan 8.000 observadore"}
+    //var criteria={"key":7,"cedula":"V888888","celular":"4264020509","mail":"gboyerizo@gmail.com","twt":"gboyerizo","mensaje":"Te esperan 8.000 observadore"}
    
     var res=[]
-    sms.SendSMS(criteria, function (err, results) {
-          res.push(results);
-          mail.SendGrid(criteria, function (err, resultsmail) {
-            res.push(resultsmail)
-            var screen_name=criteria.twt;
-            twitter.getUSER(screen_name, function (err, resultstwt) {
-               console.log("resultstwt")
-               console.log(resultstwt)
-               console.log("resultstwt")
-               
-                 var id_str=resultstwt.id_str
-                console.log(id_str)
-                res.push(resultstwt)
-                var recipientid={recipient_id:id_str,texto:criteria.mensaje}
-                if (recipientid!='0'){
-                   twitter.send_direct_message(recipientid, function (err, resultsdm) {
-                      res.push(resultsdm)
-                      response.end(JSON.stringify(res));
-                   })
-                }
-               
-            })
-            
-       })
-     })
+    
+    mail.SendGrid(criteria, function (err, resultsmail) {
+      res.push(resultsmail)
+      //sms.SendSMS(criteria, function (err, results) {
+      //  res.push(results);
+      var screen_name=criteria.twt;
+      twitter.getUSER(screen_name, function (err, resultstwt) {
+         console.log("resultstwt")
+         console.log(resultstwt)
+         console.log("resultstwt")
+         
+           var id_str=resultstwt.id_str
+          console.log(id_str)
+          res.push(resultstwt)
+          var recipientid={recipient_id:id_str,texto:criteria.mensaje}
+          if (recipientid!='0'){
+             twitter.send_direct_message(recipientid, function (err, resultsdm) {
+                res.push(resultsdm)
+                response.end(JSON.stringify(res));
+             })
+          }else{
+            response.end(JSON.stringify(res));
+          }
+         
+      })
+      
+ //})
+})//send grid
+
       
   }); 
-  app.post('/SendSMSMAILTWT', function (request, response) {
+  app.post('/SendMAILSMSTWT', function (request, response) {
     //var criteria={"key":7,"cedula":"V3664204","celular":"4126340692","mail":"ppazpurua@gmail.com","twt":"pazpurua","mensaje":"Prueba de Concepto SMS, TWT, MAIL"}
     var criteria=request.body;
     
     
     var res=[]
-    sms.SendSMS(criteria, function (err, results) {
-          res.push(results);
+    
           mail.SendGrid(criteria, function (err, resultsmail) {
             res.push(resultsmail)
+            //sms.SendSMS(criteria, function (err, results) {
+            //  res.push(results);
             var screen_name=criteria.twt;
             twitter.getUSER(screen_name, function (err, resultstwt) {
                console.log("resultstwt")
@@ -123,8 +128,8 @@ app.get('/SendSMSMAILTWT', function (criteria, response) {
                
             })
             
-       })
-     })
+       //})
+     })//send grid
     
       
   });      
@@ -159,7 +164,51 @@ app.get('/DM', function (request, response) {
     //id = "1018815783873449985"//poliflsh
     //id="791737378083921921"; //faro tweet
     var T = "Sr/Srta millenial. Se quiere unir a este futurista grupo de activismo politico?\nEn Libertador\n🙋‍https://twitter.com/messages/compose?recipient_id=45031619&welcome_message_id=1101849099102552068";
-    
+    T = {
+      "event": {
+          "type": "message_create",
+          "message_create": {
+              "target": {
+                  "recipient_id": 45031619
+              },
+              "message_data": {
+                  "text": "La cedula V3678737 corresponde al Elector Ramon Jose Gomez Arriaga.\n Vota en el Colegio Simon Bolivar\n  del Estado Miranda, Municipio Baruta, Parroquia Las Minas ",
+                  "quick_reply": {
+                      "type": "options",
+                      "options": [
+
+                          {
+                              "label": "✔️CORRECTO y 👍CONFORME",
+                              "description": "Esta correocto y estoy conforme con mi centro de votación",
+                              "metadata": "GUAIDO4"
+                          },
+                          {
+                              "label": "✔️CORRECTO e 🤚INCONFORME",
+                              "description": "Estoy registrado pero quiero mudarme a otro centro de votación",
+                              "metadata": "GUAIDO4"
+                          },
+                          {
+                              "label": "❌INCORRECTO",
+                              "description": "No es mi centro de votacion tradicional",
+                              "metadata": "GUAIDO4"
+                          },
+                          {
+                              "label": "✔️CORRECTO y vivo en el 🌐EXTERIOR",
+                              "description": "Estoy registrado pero quiero registrarme en otro centro de votación",
+                              "metadata": "GUAIDO4"
+                          },
+                          {
+                              "label": "\uD83D\uDC48 Volver",
+                              "description": "Volver",
+
+                              "metadata": "GUAIDO"
+                          }
+                      ]
+                  }
+              }
+          }
+      }
+  };
         var criteria={recipient_id:id,texto:T}
         for (i = 0; i < 5; i++) { 
           twitter.send_direct_message(criteria, function (err, results) {
