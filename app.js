@@ -62,7 +62,7 @@ app.get('/getUSER', function (criteria, response) {
 
   
 app.get('/SendMAILSMSTWT', function (criteria, response) {
-   var criteria={"key":7,"cedula":"V3664204","celular":"4126340692","mail":"ppazpurua@gmail.com","twt":"pazpurua","encabezado":"Prrueba de Concepto II","mensaje":"Prueba de Concepto SMS, TWT, MAIL"}
+   var criteria={"key":7,"cedula":"V3664204","celular":"4126340692","mail":"ppazpurua@gmail.com","twt":"pazpurua","encabezado":"Prueba de Concepto II","mensaje":"Prueba de Concepto SMS, TWT, MAIL"}
     //var criteria={"key":7,"cedula":"V888888","celular":"4142863817","mail":"franciscojcastrom@gmail.com","twt":"fcastrom","mensaje":"Te esperan 8.000 observadore"}
     //var criteria={"key":7,"cedula":"V888888","celular":"4264020509","mail":"gboyerizo@gmail.com","twt":"gboyerizo","mensaje":"Te esperan 8.000 observadore"}
    
