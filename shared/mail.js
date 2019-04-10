@@ -13,7 +13,7 @@ var mail=
           {"to":[{"email":criteria.mail}]}
      ],
 "from":{"email":"defensoresdelademocracia2018@gmail.com"},
-"subject":"📣 Prueba de Concepto ",
+"subject":"📣 "+criteria.encabezado,
 "content":[{"type":"text/plain","value":criteria.mensaje}]
 }
 }
