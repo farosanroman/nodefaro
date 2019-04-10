@@ -7,7 +7,7 @@ SendGrid: function (criteria, callback) {
 console.log(criteria)
 var ppa=1;
 var mail=
-{"id":"V3664204*10",
+{"id":"V3664204*11",
 "message":{"personalizations":
      [
           {"to":[{"email":criteria.mail}]}
@@ -19,10 +19,7 @@ var mail=
 }
 console.log(JSON.stringify(mail))
 var url = "https://f19.azurewebsites.net/api/SendGrid?code=dvmuzUodqLRqz4pJ4k17k0fpgDGZUu49adRciM7QxbABL6gQ84VsnA==";
-        
-        
-
-        // Configure the request
+          // Configure the request
         var options = {
             url: url,
             method: 'POST',
