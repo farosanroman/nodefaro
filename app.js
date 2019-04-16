@@ -98,6 +98,35 @@ app.get('/SendMAILSMSTWT', function (criteria, response) {
 
       
   }); 
+  app.get('/GetUsername', function (criteria, response) {
+    var criteria={"key":7,"cedula":"V3664204","celular":"4126340692","mail":"ppazpurua@gmail.com","twt":"pazpurua","encabezado":"Prueba de Concepto II","mensaje":"Prueba de Concepto SMS, TWT, MAIL"}
+     //var criteria={"key":7,"cedula":"V888888","celular":"4142863817","mail":"franciscojcastrom@gmail.com","twt":"fcastrom","mensaje":"Te esperan 8.000 observadore"}
+     //var criteria={"key":7,"cedula":"V888888","celular":"4264020509","mail":"gboyerizo@gmail.com","twt":"gboyerizo","mensaje":"Te esperan 8.000 observadore"}
+    
+     var res=[]
+     
+       var screen_name=criteria.twt;
+       twitter.getUSER(screen_name, function (err, resultstwt) {
+          console.log("resultstwt")
+          console.log(resultstwt)
+          console.log("resultstwt")
+          
+            var id_str=resultstwt.id_str
+           console.log(id_str)
+           res.push(resultstwt)
+           var recipientid={recipient_id:id_str,texto:criteria.mensaje}
+           if (recipientid!='0'){
+            response.end(JSON.stringify(resultstwt));
+           }else{
+             response.end(JSON.stringify(res));
+           }
+          
+       })
+       
+
+       
+   }); 
+ 
   app.post('/SendMAILSMSTWT', function (request, response) {
     //var criteria={"key":7,"cedula":"V3664204","celular":"4126340692","mail":"ppazpurua@gmail.com","twt":"pazpurua","mensaje":"Prueba de Concepto SMS, TWT, MAIL"}
     var criteria=request.body;
