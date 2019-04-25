@@ -39,8 +39,8 @@ app.get('/',(req,res)=>{
 app.get('/parroquias',(req,res)=>{
   var criteria=""
   geojson.getPARROQUIAS(criteria, function (err, results) {
-        
-    res.end(JSON.stringify(results));
+    res.end(results);     
+    //res.end(JSON.stringify(results));
 })
 
   //var ppa=queries.f();
