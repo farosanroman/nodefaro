@@ -177,7 +177,7 @@ app.get('/SendMAILSMSTWT', function (criteria, response) {
   });      
 app.get('/SendSMS', function (request, response) {
    // var criteria={"key":7,"cedula":"V3664204","celular":"4126340692","mail":"ppazpurua@gmail.com","twt":"pazpurua","mensaje":"Prueba de Concepto 2 SMS, TWT, MAIL"}
-    var criteria={"key":7,"cedula":"V888888","celular":"4142863817","mail":"franciscojcastrom@gmail.com","twt":"@fcastrom","mensaje":"Te esperan 8.000 observadore"}
+    var criteria={"key":7,"cedula":"V888888","celular":"4142863817","mail":"franciscojcastrom@gmail.com","twt":"@fcastrom","encabezado":"ENVAZEADII XXX","mensaje":"Te esperan 80.000 observadore"}
    
     sms.SendSMS(criteria, function (err, results) {
          console.log("app")
@@ -187,7 +187,7 @@ app.get('/SendSMS', function (request, response) {
       
   });
 app.get('/SendGrid', function (request, response) {
-    var criteria={"key":7,"cedula":"V3664204","celular":"4126340692","mail":"ppazpurua@gmail.com","twt":"pazpurua","mensaje":"Prueba de Concepto SMS, TWT, MAIL"}
+    var criteria={"key":7,"cedula":"V3664204","celular":"4126340692","mail":"ppazpurua@gmail.com","twt":"pazpurua","encabezado":"ENVAZEADII XXX","mensaje":"Prueba de Concepto SMS, TWT, MAIL"}
    
   mail.SendGrid(criteria, function (err, results) {
        console.log("finn")
