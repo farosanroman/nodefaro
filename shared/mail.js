@@ -12,7 +12,7 @@ var mail=
      [
           {"to":[{"email":criteria.mail}]}
      ],
-"from":{"email":"ppazpurua@gmail.com"},
+"from":{"email":"defensoresdelademocracia2018@gmail.com"},
 "subject":"📣 "+criteria.encabezado,
 "content":[{"type":"text/plain","value":criteria.mensaje}]
 }
