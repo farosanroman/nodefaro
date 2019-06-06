@@ -151,6 +151,7 @@ app.get('/SendMAILSMSTWT', function (criteria, response) {
             res.push(resultsmail)
             //sms.SendSMS(criteria, function (err, results) {
             //  res.push(results);
+            /*
             var screen_name=criteria.twt;
             twitter.getUSER(screen_name, function (err, resultstwt) {
                console.log("resultstwt")
@@ -169,6 +170,7 @@ app.get('/SendMAILSMSTWT', function (criteria, response) {
                 }
                
             })
+            */
             
        //})
      })//send grid
