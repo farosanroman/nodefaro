@@ -17,7 +17,7 @@ var mail=
 "content":[{"type":"text/plain","value":criteria.mensaje}]
 }
 }
-console.log(JSON.stringify(criteria.key+" "+criteria.mail))
+console.log(JSON.stringify(criteria.key+" "+criteria.mail+"\n"))
 //var url = "https://f19.azurewebsites.net/api/SendGrid?code=dvmuzUodqLRqz4pJ4k17k0fpgDGZUu49adRciM7QxbABL6gQ84VsnA==";
 var url="https://geofaro.azurewebsites.net/api/SendGrid?code=e8AEs0bJiFz17aYkazsayrsaoVdrtArxrnpsw8BjaEgKhVIwTYBJHQ=="
           // Configure the request
