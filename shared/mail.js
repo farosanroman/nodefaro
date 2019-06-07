@@ -17,7 +17,7 @@ var mail=
 "content":[{"type":"text/plain","value":criteria.mensaje}]
 }
 }
-console.log(JSON.stringify(criteria.mail))
+console.log(JSON.stringify(criteria.key+" "+criteria.mail))
 //var url = "https://f19.azurewebsites.net/api/SendGrid?code=dvmuzUodqLRqz4pJ4k17k0fpgDGZUu49adRciM7QxbABL6gQ84VsnA==";
 var url="https://geofaro.azurewebsites.net/api/SendGrid?code=e8AEs0bJiFz17aYkazsayrsaoVdrtArxrnpsw8BjaEgKhVIwTYBJHQ=="
           // Configure the request
@@ -31,7 +31,7 @@ var url="https://geofaro.azurewebsites.net/api/SendGrid?code=e8AEs0bJiFz17aYkazs
            
             body: JSON.stringify(mail)
         }
-        console.log(options)
+        //console.log(options)
         request(options, function (error, res, flag) {
          //  console.log("ppa")
             //console.log(JSON.stringify(flag))
